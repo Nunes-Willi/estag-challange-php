@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suite Store - Home</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <nav class="header">
+        <a href="./index.html">
+            <h1>Suite Store</h1>
+        </a>
+        <a href="../Products/products.html">Products</a>
+        <a href="../categories/categories.html">Categories</a>
+        <a href="../history/history.html">History</a>
+    </nav>
+
+    <div class="add_prod">
+        <form>
+            <select class="prod" name="product_code" id="select-product" onchange="pegaValorInput()" required>
+                <option value="Product" disabled selected hidden>Product</option>
+            </select>
+            <input type="number" value="1" class="amount" name="amount" id="input-car-amount" placeholder="Amount">
+            <input disabled type="number" class="tax" name="tax" id="input-car-tax" placeholder="Tax">
+            <input disabled type="number" class="up" name="price" id="input-car-up" placeholder="Price"> </br>
+            <button class="add" type="submit">Add Product</button>
+        </form>
+    </div>
+    <div class="table">
+        <table id="tbcar">
+            <tr>
+                <th class="first_colum">Code</th>
+                <th>Product</th>
+                <th>Amount</th>
+                <th>Tax</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+
+            <tbody id="tbody"></tbody>
+        </table>
+
+    </div>
+    <footer>
+        <div class="direito">
+            <label>Tax: <input type="text" class="tax2" name="tax" placeholder="$0.00" disabled></label><br>
+            <label>Total: <input type="text" class="total2" name="total" placeholder="$0.00" disabled></label>
+        </div>
+        <div class="direito2">
+            <input type="button" class="cancel" value="Cancel" onclick="cancel(this)">
+            <input type="button" class="finish" onclick="finishHim()" value="Finish">
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script src="./indexwithphp.js"></script>

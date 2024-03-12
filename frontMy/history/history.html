@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suite Store - History</title>
+    <link rel="stylesheet" href="./history.css">
+</head>
+
+<body>
+    <nav class="header">
+        <a href="../home/index.html">
+            <h1>Suite Store</h1>
+        </a>
+        <a href="../Products/products.html">Products</a>
+        <a href="../categories/categories.html">Categories</a>
+        <a href="../history/history.html">History</a>
+    </nav>
+
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Tax</th>
+            <th>Total</th>
+        </tr>
+        <!-- <tr>
+            <td id="mostrar_detalhes_passar_mouse">001 <p id="mostrar">Product: Rice | Amount:2 | UP: $20.00 | Tax:
+                    $2.00 | Category: Food | Total: $44.00</p>
+            </td>
+            <td>20%</td>
+            <td>$20.00</td>
+        </tr>
+        <tr>
+            <td id="mostrar_detalhes_passar_mouse">002 <p id="mostrar">Product: Beans; | Amount:1 | UP: $9.00 | Tax:
+                    $0.50 | Category: Food | Total: $9.50</p>
+            </td>
+            <td>5%</td>
+            <td>$10.00</td>
+
+        </tr> -->
+        <tbody id="tbody"></tbody>
+    </table>
+    <div>
+        <input type="button" class="deletHisto" value="Delete History" onclick="cancel(this)">
+        <h3 style="color: rgb(245, 65, 65);">PS: Para ver mais detalhes de sua compra, passe com o mouse sob o code!</h3>
+    </div>
+
+    <style scoped>
+        /* #mostrar {
+            display: none;
+            font-weight: bold;
+            color: rgb(3, 223, 3);
+        }
+
+        #mostrar_detalhes_passar_mouse:hover #mostrar {
+            display: block;
+        } */
+        
+        td:hover p{
+            display: block;
+        }
+        p{
+            display: none;
+            font-weight: bold;
+            color: rgb(3, 223, 3);
+        }
+    </style>
+
+</body>
+</html>
+
+<script src="./historywithphp.js"></script>
