@@ -16,11 +16,11 @@ function getProduct() {
 function renderTelaCar() {
   document.getElementById("tbody").innerText = "";
   fetch("http://localhost/routes/orders.php?action=getitem")
-    .then((response) => response.json())
-    .then((data) => {
+    .then(response => response.json())
+    .then(data => {
       const body = document.getElementById("tbody");
       data.forEach((order) => {
-        var azul = (order.tax / 100) * order.price + order[3] * order.price;
+        var azul = (order.tax / 100 * order.price) + (order[3] * order.price);
         const linha = document.createElement("tr");
         linha.innerHTML = `
             <tr>
@@ -34,6 +34,19 @@ function renderTelaCar() {
                 </tr>
                 `;
         tbody.append(linha);
+         
+        var taxFinish = 0;
+        var totalFinish = 0;
+
+        var taxF = parseFloat(order.tax);
+        var price = parseFloat(order.price);
+
+        taxFinish += (taxF / 100 * price);
+        totalFinish += (order[3] * order.price);
+        
+        document.querySelector('#tax2').value = `${taxFinish.toFixed(2)}`
+        document.querySelector('#total2').value = `${totalFinish.toFixed(2)}`
+
       });
     });
 }
@@ -49,6 +62,7 @@ async function postCar(event) {
     },
     window.location.reload()
   );
+  finalTaxAndTotal();
 }
 
 function pegaValorInput(event) {
@@ -67,6 +81,13 @@ function pegaValorInput(event) {
     });
 }
 
+// function order(){
+//   fetch("http://localhost/routes/orders.php?action=post")
+//   .then(response => response.json())
+//   .then (data => {
+
+//   })
+// }
 // function delet(){
 //     alert('Começou cedo hoje')
 // }
