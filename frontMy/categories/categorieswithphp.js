@@ -11,7 +11,7 @@ function renderTelaCateg() {
                 <td>${category.code}</td>
                 <td>${category.name}</td>
                 <td>${category.tax}%</td>
-                <td><button class="delet" onclick="delet(), location.href='http://localhost/routes/categories.php?action=delete&code=${category.code}'">Delete</button></td>
+                <td><button class="delet" onclick="postCateg(), location.href='http://localhost/routes/categories.php?action=delete&code=${category.code}'">Delete</button></td>
                 </tr>
                 `;
                 tbody.append(linha);
@@ -19,8 +19,14 @@ function renderTelaCateg() {
         });
 }
 
-function delet(){
-    window.location.reload(tbody)
+async function postCateg(event){
+    event.preventDefault()
+    const category = new FormData(document.getElementById('categoryForm'))
+    const response = await fetch("http://localhost/routes/categories.php?action=post", {
+        method: 'POST',
+        body: category
+    },
+    window.location.reload()
+    )
 }
-
 renderTelaCateg()

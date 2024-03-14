@@ -19,9 +19,9 @@
     </nav>
 
     <div class="add_category">
-        <form action="http://localhost/routes/categories.php?action=post" method="POST">
+        <form onsubmit="postCateg(event)" id="categoryForm">
             <input type="text" class="category" name="name" id="input-category" placeholder="Category"><br>
-            <input type="number" class="tax_cat" name="tax" id="input-tax" placeholder="Tax"><br>
+            <input type="number" min="0.01" step="any" class="tax_cat" name="tax" id="input-tax" placeholder="Tax"><br>
             <button type="submit" class="add">Add Category </button>
         </form>
     </div>

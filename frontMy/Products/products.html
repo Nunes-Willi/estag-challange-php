@@ -18,10 +18,10 @@
         <a href="../history/history.html">History</a>
     </nav>
     <div class="add_prod">
-        <form action="http://localhost/routes/products.php?action=post" method="POST">
+        <form onsubmit="postProd(event)" id="productForm">
             <input type="text" class="prod" name="name" id="input-prod" placeholder="Product"><br>
             <input type="number" class="amount" name="amount" id="input-amount" placeholder="Amount">
-            <input type="number" class="up" name="price" id="input-up" placeholder="Price">
+            <input type="number" min="0.05" step="any" class="up" name="price" id="input-up" placeholder="Price">
             <select name="category_code" class="cat" id="select-category">
                 <option value="Category" disabled selected hidden>Category</option>
             </select>
@@ -44,8 +44,7 @@
         <img src>
 
     </div>
+    <script src="./productswithphp.js"></script>
 </body>
 
 </html>
-
-<script src="./productswithphp.js"></script>

@@ -25,10 +25,10 @@ function renderTelaProd() {
                 <tr>
                 <td>${product[0]}</td>
                 <td>${product[1]}</td>
-                <td>${product.amount}%</td>
-                <td>${product.price}%</td>
+                <td>${product.amount} UND</td>
+                <td>$${product.price}</td>
                 <td>${product.name}</td>
-                <td><button class="delet" onclick="delet(), location.href='http://localhost/routes/products.php?action=delete&code=${product[0]}'">Delete</button></td>
+                <td><button class="delet" onclick="postProd(event), location.href='http://localhost/routes/products.php?action=delete&code=${product[0]}'">Delete</button></td>
                 </tr>
                 `;
                 tbody.append(linha);
@@ -36,8 +36,15 @@ function renderTelaProd() {
         });
 }
 
-function delet(){
-    window.location.reload(tbody)
+async function postProd(event){
+        event.preventDefault()
+        const product = new FormData(document.getElementById('productForm'))
+        const response = await fetch("http://localhost/routes/products.php?action=post", {
+            method: 'POST',
+            body: product
+        },
+        window.location.reload()
+        )
 }
 
 getCategory()
