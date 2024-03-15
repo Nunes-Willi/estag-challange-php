@@ -25,17 +25,6 @@ var tbitem = [];
         } else { alert("Algum(ns) campo ainda não está preenchido") }
     }
 
-
-
-
-
-
-
-
-
-
-
-    
     function renderItem(item) {
         var corpotb = document.getElementById('tbody');
         var tr = document.createElement('tr');

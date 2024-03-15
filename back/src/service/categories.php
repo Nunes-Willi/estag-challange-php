@@ -6,7 +6,9 @@ include ("../config.php");
     $name = $_POST["name"];
     $tax = $_POST["tax"];
 
-    $categoriesPost = $myPDO->prepare("INSERT INTO categories (name, tax) VALUES ('{$name}', '{$tax}')");
+    $categoriesPost = $myPDO->prepare("INSERT INTO categories (name, tax) VALUES ( :name, :tax)");
+    $categoriesPost->bindParam(":name", $name);
+    $categoriesPost->bindParam(":tax", $tax);
     $categoriesPost->execute();
 }
 

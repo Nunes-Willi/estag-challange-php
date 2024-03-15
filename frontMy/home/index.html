@@ -47,12 +47,12 @@
     </div>
     <footer>
         <div class="direito">
-            <label>Tax: <input type="number" id="tax2" class="tax2" name="taxF" placeholder="$0.00" aria-disabled="true" step="any"></label><br>
-            <label>Total: <input type="number" id="total2" class="total2" name="totalF" placeholder="$0.00" aria-disabled="true" step="any"></label>
+            <label>Tax: <input type="text" id="tax2" class="tax2" name="taxF" placeholder="$0.00" aria-disabled="true" step="any"></label><br>
+            <label>Total: <input type="text" id="total2" class="total2" name="totalF" placeholder="$0.00" aria-disabled="true" step="any"></label>
         </div>
         <div class="direito2">
-            <input type="submit" class="cancel" value="Cancel">
-            <button type="submit" class="finish" value="Finish">Finhish</button>
+            <input type="submit" onclick="cancel(event)" class="cancel" value="Cancel">
+            <button type="submit" onclick="joinOrders()" class="finish" value="Finish">Finhish</button>
         </div>
     </footer>
 </body>

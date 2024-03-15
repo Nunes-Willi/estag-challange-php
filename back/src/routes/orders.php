@@ -5,8 +5,12 @@ header("Access-Control-Allow-Headers: *");
 header ('Access-Control-Allow-Method: GET, DELETE, POST');
 
 switch ($_REQUEST['action']){
+    //-----Orders-----
     case 'post';
-    postCar($myPDO);
+    print_r($_POST);
+    $total = $_POST['totalF'];
+    $tax = $_POST['taxF'];
+    postCar($myPDO, $total, $tax);
     echo ("<script>history.back();</script>");
     break;
 
@@ -23,12 +27,14 @@ switch ($_REQUEST['action']){
         echo '<button onclick="history.back()">Come Back</button>';
     }
 
+
+//-----Order_item-----
     case 'postitem';
     $product_code = $_POST["product_code"];
     $amount = $_POST["amount"];
     $price = $_POST["price"];
     $tax = $_POST["tax"];
-    postCarItem($myPDO, $product_code, $amount, $price, $tax);
+    postCarItem($myPDO, $order_code, $product_code, $amount, $price, $tax);
     echo ("<script>history.back();</script>");
     break;
 
