@@ -38,7 +38,7 @@ function getCarItem($myPDO){
     return print_r(json_encode($data));
 }
 
-function orderMax($myPDO){
+function getOrderMax($myPDO){
     $orderMax = $myPDO -> preoare("INSERT INTO order_item INNER JOIN orders ON order_code = orders.code");
     $data = $orderMax -> fetchAll();
     return print_r(json_encode($data));
