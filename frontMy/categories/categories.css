@@ -121,3 +121,12 @@ td {
     border: solid 1px;
     height: 23px;
 }
+
+/* .det{
+    display: none;
+    font-weight: bold;
+    color: rgb(3, 223, 3);
+}
+.testeH:hover .det{
+    display: block;
+} */
