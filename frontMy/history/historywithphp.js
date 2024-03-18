@@ -12,8 +12,7 @@ function renderTelaHistory(){
             const detail = document.createElement('p');
             const more = document.createElement('button')
             tdCode.textContent = histo[0];
-            detail.textContent = `Detalhes: ${histo.tax}, ${histo.total} 
-            Rock 'n Roll Danation`;
+            detail.textContent = `Detalhes: ${histo.tax}, ${histo.total}`;
 
             more.textContent = "More";
             more.className = 'deletHisto'
