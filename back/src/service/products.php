@@ -16,7 +16,7 @@ function postProd($myPDO){
 }
 
 function getProd($myPDO){
-    $products = $myPDO->query("SELECT * FROM products INNER JOIN categories ON category_code = categories.code");
+    $products = $myPDO->query("SELECT * FROM products INNER JOIN categories ON products.category_code = categories.code");
     $data = $products->fetchAll();
     return print_r(json_encode($data));
 }

@@ -30,6 +30,7 @@ switch ($_REQUEST['action']){
 
 //-----Order_item-----
     case 'postitem';
+    $order_code = $_POST["order_code"];
     $product_code = $_POST["product_code"];
     $amount = $_POST["amount"];
     $price = $_POST["price"];
