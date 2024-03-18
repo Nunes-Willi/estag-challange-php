@@ -7,11 +7,10 @@ header ('Access-Control-Allow-Method: GET, DELETE, POST');
 switch ($_REQUEST['action']){
     //-----Orders-----
     case 'post';
-    print_r($_POST);
     $total = $_POST['totalF'];
     $tax = $_POST['taxF'];
     postCar($myPDO, $total, $tax);
-    echo ("<script>history.back();</script>");
+    //echo ("<script>history.back();</script>");
     break;
 
     case 'get';

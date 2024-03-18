@@ -8,10 +8,15 @@ function postCar($myPDO, $total, $tax){
     $carrinhoPost -> bindParam(":total", $total);
     $carrinhoPost -> bindParam(":tax", $tax);
     $carrinhoPost -> execute();
+    
+    
+    $code = $myPDO->query("SELECT code FROM orders");
+    $code = $code->fetchALL();
+    print_r (json_encode(array("code"=>count($code))));
 }
 
 function getCar($myPDO){
-    $carrinho = $myPDO->query("SELECT MAX (code) FROM orders");
+    $carrinho = $myPDO->query("SELECT * FROM orders");
     $data = $carrinho->fetchAll();
     return print_r(json_encode($data));
 }

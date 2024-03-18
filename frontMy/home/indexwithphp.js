@@ -40,6 +40,7 @@ function renderTelaCar() {
                 </tr>
                 `;
         body.append(linha);
+        // console.log(data);
 
         var taxF = parseFloat(order.tax);
         var price = parseFloat(order.price);
@@ -53,6 +54,10 @@ function renderTelaCar() {
     });
 }
 
+// async function postCar(event) {
+//   event.preventDefault();
+ 
+// }
 async function postCar(event) {
   event.preventDefault();
   const carrinho = new FormData(document.getElementById("carrinhoForm"));
@@ -82,17 +87,28 @@ function pegaValorInput(event) {
     });
 }
 
-function joinOrders() {
+async function joinOrders() {
   let getTotal = document.getElementById("total2").value;
   let getTax = document.getElementById("tax2").value;
   let data = new FormData();
+  let orderCode;
   data.append("totalF", getTotal);
   data.append("taxF", getTax);
 
-  fetch(`http://localhost/routes/orders.php?action=post`, {
+  let response = fetch(`http://localhost/routes/orders.php?action=post`, {
     method: "POST",
     body: data,
   });
+  orderCode = await response.then(res=>res.json())
+  console.log(orderCode.code)
+
+
+
+}
+
+function cancel(){
+    alert("Error")
+ 
 }
 getProduct();
 renderTelaCar();
