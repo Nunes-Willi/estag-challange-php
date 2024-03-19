@@ -259,7 +259,7 @@ async function joinOrders() {
     orderCode = await response.then((res) => res.json());
     carrinho.forEach((produto) => {
       postCar({
-        order_code: orderCode,
+        order_code: orderCode.code,
         product_code: produto.id,
         amount: parseInt(produto.newAmountCar),
         price: parseFloat(produto.newUpCar),
