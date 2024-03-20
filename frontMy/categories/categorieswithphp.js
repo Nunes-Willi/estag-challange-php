@@ -13,16 +13,11 @@ function renderTelaCateg() {
         linha.appendChild(tdCode);
 
         const tdCategory = document.createElement("td");
-        // const detHover =  document.createElement("p")
         tdCategory.textContent = category.name;
-        // detHover.textContent = "Teste Pro hover"
-        // detHover.className = "det"
-        // tdCategory.className = "testeH"
-        // tdCategory.appendChild(detHover)
         linha.appendChild(tdCategory);
 
         const tdTax = document.createElement("td");
-        tdTax.textContent = category.tax;
+        tdTax.textContent = `${category.tax}%`;
         linha.appendChild(tdTax);
 
         const tdAction = document.createElement("td");
