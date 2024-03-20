@@ -285,10 +285,11 @@ function menosProdStok() {
       const carts = JSON.parse(localStorage.getItem("mytbItemCar"));
       data.forEach((itemBanco) => {
         carts.forEach((itemC) => {
-          console.log(itemC);
-          if (itemC.id == itemBanco.code) {
-            console.log(itemBanco);
-            var code = itemC.id;
+          // console.log(itemC);
+          if (itemC.newProdCar == itemBanco.code) {
+            // console.log(itemBanco);
+            var code = itemC.newProdCar;
+            console.log(code);
             var amountProd = parseInt(itemBanco.amount);
             var amountCart = parseInt(itemC.newAmountCar);
 

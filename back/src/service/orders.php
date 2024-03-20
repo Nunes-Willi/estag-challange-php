@@ -55,6 +55,7 @@ function delCarItem($myPDO){
 
 function menosProduct($myPDO){
     $amount = $_REQUEST["amount"];
-    $product = $myPDO->prepare("UPDATE products SET amount = $amount WHERE code=" . $_REQUEST["code"]);
+    echo $_REQUEST["code"];
+    $product = $myPDO->prepare("UPDATE products SET amount = $amount WHERE code = {$_REQUEST["code"]}");
     $product->execute();
 }
