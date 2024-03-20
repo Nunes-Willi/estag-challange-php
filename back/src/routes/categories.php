@@ -20,7 +20,7 @@ switch($_REQUEST["action"]){
             echo ("<script> history.back();</script>");
 
         } catch (Exception $e){
-            echo "HMMMMMMMM (Comentário Bovino)";
+            echo "Erro ao tentar excluir categoria. A categoria seleciona esta ligada a um produto";
             echo '<button onclick="history.back()">Come Back</button>';
         }
         break;

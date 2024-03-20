@@ -22,7 +22,7 @@ switch ($_REQUEST['action']){
         delCar($myPDO);
         echo ("<script>history.back();</script>");
     } catch (Exception $e){
-        echo "HMMMMMMMMMMMM (Comentário Bovino)";
+        echo "Erro ao tentar excluir carrinho";
         echo '<button onclick="history.back()">Come Back</button>';
     }
 
@@ -48,8 +48,12 @@ switch ($_REQUEST['action']){
             echo ("<script> history.back();</script>");
 
         } catch (Exception $e){
-            echo "HMMMMMMMM (Comentário Bovino)";
+            echo "Erro ao tentar excluir item";
             echo '<button onclick="history.back()">Come Back</button>';
         }
+        break;
+    case 'updateproduct':
+        menosProduct($myPDO);
+        echo ("<script> location.href='http://localhost:5173/history'</script>");
         break;
 }

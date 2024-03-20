@@ -1,6 +1,6 @@
 var tbItemCar = [];
 
-function getProduct() {
+function getProduct(product) {
   fetch("http://localhost/routes/products.php?action=get")
     .then((response) => response.json())
     .then((data) => {
@@ -194,7 +194,7 @@ function delet(id) {
 
 async function postCar(bodyContent) {
   const formData = new FormData();
-  console.log(bodyContent);
+  // console.log(bodyContent);
   formData.append("order_code", bodyContent.order_code);
   formData.append("product_code", bodyContent.product_code);
   formData.append("amount", bodyContent.amount);
@@ -211,12 +211,12 @@ async function postCar(bodyContent) {
 }
 
 function pegaValorInput(event) {
-  console.log(event);
+  // console.log(event);
   fetch("http://localhost/routes/products.php?action=get")
     .then((response) => response.json())
     .then((data) => {
       data.find((prod) => {
-        console.log(data);
+        // console.log(data);
         if (event.target.value == prod[0]) {
           var price = document.getElementById("input-car-up");
           var tax = document.getElementById("input-car-tax");
@@ -227,19 +227,6 @@ function pegaValorInput(event) {
       });
     });
 }
-
-// function pegaValorInput() {
-//  const getForm = document.getElementById('select-form').value
-//  fetch("http://localhost/routes/products.php?action=get")
-//     .then((response) => response.json())
-//     .then((product) => {
-//       const product = product.find((product) => product[0] == getForm)
-
-//       document.getElementById('input-car-tax').value = product.tax
-//       document.getElementById('input-car-up').value = product.price
-//     })
-
-// }
 
 async function joinOrders() {
   if (tbItemCar.length > 0) {
@@ -267,7 +254,7 @@ async function joinOrders() {
       });
     });
 
-    // menosProdStok()
+    menosProdStok();
     setTimeout(() => {
       localStorage.removeItem("mytbItemCar");
       tbItemCar = [];
@@ -289,6 +276,46 @@ function cancel() {
     alert("Nenuma compra em andamento");
     return;
   }
+}
+
+function menosProdStok() {
+  fetch("http://localhost/routes/products.php?action=get")
+    .then((response) => response.json())
+    .then((data) => {
+      const carts = JSON.parse(localStorage.getItem("mytbItemCar"));
+      data.forEach((itemBanco) => {
+        carts.forEach((itemC) => {
+          console.log(itemC);
+          if (itemC.id == itemBanco.code) {
+            console.log(itemBanco);
+            var code = itemC.id;
+            var amountProd = parseInt(itemBanco.amount);
+            var amountCart = parseInt(itemC.newAmountCar);
+
+            var amount = amountProd - amountCart;
+
+            if (amount < amountCart) {
+              alert("Quantidade não disponivel");
+              return;
+            } else {
+              let dataC = new FormData();
+              dataC.append("amount", JSON.stringify(parseInt(amount)));
+              dataC.append("code", JSON.stringify(parseInt(code)));
+
+              fetch(`http://localhost/routes/orders.php?action=updateproduct`, {
+                method: "POST",
+                body: dataC,
+              });
+              return true;
+            }
+          }
+          // else{
+          //   alert('Erro de Concordância')
+          //   return;
+          // }
+        });
+      });
+    });
 }
 getProduct();
 getItemCar();

@@ -21,6 +21,7 @@ function renderTelaHistory(){
     fetch("http://localhost/routes/orders.php?action=get")
     .then(response => response.json())
     .then(data => {
+        // console.log(data);
         const body = document.getElementById('tbody');
         
         data.forEach(histo =>{
@@ -37,7 +38,7 @@ function renderTelaHistory(){
             tdCode.textContent = histo[0];
             detail.textContent = `Total Geral: ${detTT}`;
 
-            more.textContent = "More Details";
+            more.textContent = "More Detail";
             more.className = 'deletHisto'
             more.onclick = function () {
                 detailBtn()

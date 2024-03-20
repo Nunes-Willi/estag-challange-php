@@ -53,3 +53,8 @@ function delCarItem($myPDO){
     $carrinhoItem = $myPDO->query("DELETE FROM order_item WHERE code=" .$_REQUEST["code"]);
 }
 
+function menosProduct($myPDO){
+    $amount = $_REQUEST["amount"];
+    $product = $myPDO->prepare("UPDATE products SET amount = $amount WHERE code=" . $_REQUEST["code"]);
+    $product->execute();
+}
