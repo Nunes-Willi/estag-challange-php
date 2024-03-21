@@ -1,27 +1,73 @@
-function detailBtn(){
+// function detailBtn(){
+//     fetch("http://localhost/routes/orders.php?action=getitem")
+//     .then((res) => res.json())
+//     .then((data) => {
+
+//         data.forEach(det => {
+//             var order_code = det.order_code
+//             var nameProd = det.name
+//             var amountProd = det[3]
+//             var priceProd = det.price
+//             var taxProd = det.tax / 100 * priceProd
+//             var totalProd = amountProd * priceProd + taxProd
+
+//             alert(`Compra: ${order_code}; Produto: ${nameProd}; Qtd: ${amountProd} UND; Price: $${priceProd}; Tax: $${taxProd.toFixed(2)}; Total:$${totalProd.toFixed(2)}`)
+//         })
+//     })
+// }
+
+function detailBtn(codeButton) {
     fetch("http://localhost/routes/orders.php?action=getitem")
-    .then((res) => res.json())
-    .then((data) => {
+        .then((res) => res.json())
+        .then((data) => {
 
-        data.forEach(det => {
-            var order_code = det.order_code
-            var nameProd = det.name
-            var amountProd = det[3]
-            var priceProd = det.price
-            var taxProd = det.tax / 100 * priceProd
-            var totalProd = amountProd * priceProd + taxProd
+            fetch("http://localhost/routes/orders.php?action=get")
+                .then(testeRes => testeRes.json())
+                .then(dataTeste => {
+                    
+                    var order_code
+                    var nameProd 
+                    var amountProd
+                    var priceProd
+                    var taxProd 
+                    var totalProd 
+                    var textoProdutosAlert = '' 
 
-            alert(`Compra: ${order_code}; Produto: ${nameProd}; Qtd: ${amountProd} UND; Price: $${priceProd}; Tax: $${taxProd.toFixed(2)}; Total:$${totalProd.toFixed(2)}`)
-        })
-    })
+                    // console.log("🚀 ~ .then ~ det:", det)
+                    dataTeste.forEach(testDet => {
+                        if(testDet.code == codeButton){ 
+                            data.forEach(det => {
+                            // console.log("🚀 ~ .then ~ testDet:", testDet)
+                            if (det.order_code == codeButton) {
+    
+                                    console.log("🚀 ~ .then ~ det.order_code:", det.order_code)
+                                    console.log("🚀 ~ .then ~ testDet.code:", codeButton)
+                                    // console.log(det.order_code);
+                                    // console.log(testDet.code);
+                                    order_code = det.order_code
+                                    nameProd = det.name
+                                    amountProd = det[3]
+                                    priceProd = det.price
+                                    taxProd = det.tax / 100 * priceProd
+                                    totalProd = amountProd * priceProd + taxProd
+                                    console.log('AQUIIIIIII');
+                                    textoProdutosAlert += `Produto: ${nameProd}; Qtd: ${amountProd} UND; Price: $${priceProd}; Tax: $${taxProd.toFixed(2)}; Total:$${totalProd.toFixed(2)}\n`
+                                    return
+                                }
+                            });
+                        }
+                    });
+                    alert(`Compra: ${order_code}; Produtos: \n${textoProdutosAlert}`)
+                });
+        });
 }
+
 
 function renderTelaHistory(){
     document.getElementById('tbody').innerText = "";
     fetch("http://localhost/routes/orders.php?action=get")
     .then(response => response.json())
     .then(data => {
-        // console.log(data);
         const body = document.getElementById('tbody');
         
         data.forEach(histo =>{
@@ -36,12 +82,12 @@ function renderTelaHistory(){
             const detail = document.createElement('p');
             const more = document.createElement('button')
             tdCode.textContent = histo[0];
-            detail.textContent = `Total Geral: ${detTT}`;
+            detail.textContent = `Total Geral: ${detTT.toFixed(2)}`;
 
             more.textContent = "More Detail";
             more.className = 'deletHisto'
             more.onclick = function () {
-                detailBtn()
+                detailBtn(histo[0])
             }
 
             detail.appendChild(more);

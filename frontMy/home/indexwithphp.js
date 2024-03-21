@@ -194,7 +194,6 @@ function delet(id) {
 
 async function postCar(bodyContent) {
   const formData = new FormData();
-  // console.log(bodyContent);
   formData.append("order_code", bodyContent.order_code);
   formData.append("product_code", bodyContent.product_code);
   formData.append("amount", bodyContent.amount);
@@ -211,12 +210,10 @@ async function postCar(bodyContent) {
 }
 
 function pegaValorInput(event) {
-  // console.log(event);
   fetch("http://localhost/routes/products.php?action=get")
     .then((response) => response.json())
     .then((data) => {
       data.find((prod) => {
-        // console.log(data);
         if (event.target.value == prod[0]) {
           var price = document.getElementById("input-car-up");
           var tax = document.getElementById("input-car-tax");
@@ -285,11 +282,8 @@ function menosProdStok() {
       const carts = JSON.parse(localStorage.getItem("mytbItemCar"));
       data.forEach((itemBanco) => {
         carts.forEach((itemC) => {
-          // console.log(itemC);
           if (itemC.newProdCar == itemBanco.code) {
-            // console.log(itemBanco);
             var code = itemC.newProdCar;
-            console.log(code);
             var amountProd = parseInt(itemBanco.amount);
             var amountCart = parseInt(itemC.newAmountCar);
 
