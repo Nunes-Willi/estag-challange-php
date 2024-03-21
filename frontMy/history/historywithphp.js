@@ -1,21 +1,3 @@
-// function detailBtn(){
-//     fetch("http://localhost/routes/orders.php?action=getitem")
-//     .then((res) => res.json())
-//     .then((data) => {
-
-//         data.forEach(det => {
-//             var order_code = det.order_code
-//             var nameProd = det.name
-//             var amountProd = det[3]
-//             var priceProd = det.price
-//             var taxProd = det.tax / 100 * priceProd
-//             var totalProd = amountProd * priceProd + taxProd
-
-//             alert(`Compra: ${order_code}; Produto: ${nameProd}; Qtd: ${amountProd} UND; Price: $${priceProd}; Tax: $${taxProd.toFixed(2)}; Total:$${totalProd.toFixed(2)}`)
-//         })
-//     })
-// }
-
 function detailBtn(codeButton) {
     fetch("http://localhost/routes/orders.php?action=getitem")
         .then((res) => res.json())
@@ -24,33 +6,26 @@ function detailBtn(codeButton) {
             fetch("http://localhost/routes/orders.php?action=get")
                 .then(testeRes => testeRes.json())
                 .then(dataTeste => {
-                    
+
                     var order_code
-                    var nameProd 
+                    var nameProd
                     var amountProd
                     var priceProd
-                    var taxProd 
-                    var totalProd 
-                    var textoProdutosAlert = '' 
+                    var taxProd
+                    var totalProd
+                    var textoProdutosAlert = ''
 
-                    // console.log("🚀 ~ .then ~ det:", det)
                     dataTeste.forEach(testDet => {
-                        if(testDet.code == codeButton){ 
+                        if (testDet.code == codeButton) {
                             data.forEach(det => {
-                            // console.log("🚀 ~ .then ~ testDet:", testDet)
-                            if (det.order_code == codeButton) {
-    
-                                    console.log("🚀 ~ .then ~ det.order_code:", det.order_code)
-                                    console.log("🚀 ~ .then ~ testDet.code:", codeButton)
-                                    // console.log(det.order_code);
-                                    // console.log(testDet.code);
+                                if (det.order_code == codeButton) {
+
                                     order_code = det.order_code
                                     nameProd = det.name
                                     amountProd = det[3]
                                     priceProd = det.price
                                     taxProd = det.tax / 100 * priceProd
                                     totalProd = amountProd * priceProd + taxProd
-                                    console.log('AQUIIIIIII');
                                     textoProdutosAlert += `Produto: ${nameProd}; Qtd: ${amountProd} UND; Price: $${priceProd}; Tax: $${taxProd.toFixed(2)}; Total:$${totalProd.toFixed(2)}\n`
                                     return
                                 }
@@ -63,47 +38,47 @@ function detailBtn(codeButton) {
 }
 
 
-function renderTelaHistory(){
+function renderTelaHistory() {
     document.getElementById('tbody').innerText = "";
     fetch("http://localhost/routes/orders.php?action=get")
-    .then(response => response.json())
-    .then(data => {
-        const body = document.getElementById('tbody');
-        
-        data.forEach(histo =>{
+        .then(response => response.json())
+        .then(data => {
+            const body = document.getElementById('tbody');
 
-            var histTax = parseFloat(histo.tax)
-            var histTotal = parseFloat(histo.total)
+            data.forEach(histo => {
 
-            var detTT = histTax + histTotal
+                var histTax = parseFloat(histo.tax)
+                var histTotal = parseFloat(histo.total)
 
-            const linha = document.createElement('tr');
-            const tdCode = document.createElement('td');
-            const detail = document.createElement('p');
-            const more = document.createElement('button')
-            tdCode.textContent = histo[0];
-            detail.textContent = `Total Geral: ${detTT.toFixed(2)}`;
+                var detTT = histTax + histTotal
 
-            more.textContent = "More Detail";
-            more.className = 'deletHisto'
-            more.onclick = function () {
-                detailBtn(histo[0])
-            }
+                const linha = document.createElement('tr');
+                const tdCode = document.createElement('td');
+                const detail = document.createElement('p');
+                const more = document.createElement('button')
+                tdCode.textContent = histo[0];
+                detail.textContent = `Total Geral: ${detTT.toFixed(2)}`;
 
-            detail.appendChild(more);
-            tdCode.appendChild(detail);
-            linha.appendChild(tdCode);
+                more.textContent = "More Detail";
+                more.className = 'deletHisto'
+                more.onclick = function () {
+                    detailBtn(histo[0])
+                }
 
-            const tdTax = document.createElement('td');
-            tdTax.textContent = histo.tax;
-            linha.appendChild(tdTax);
-            
-            const tdTotal = document.createElement('td');
-            tdTotal.textContent = histo.total;
-            linha.appendChild(tdTotal);
+                detail.appendChild(more);
+                tdCode.appendChild(detail);
+                linha.appendChild(tdCode);
 
-            body.append(linha);
+                const tdTax = document.createElement('td');
+                tdTax.textContent = histo.tax;
+                linha.appendChild(tdTax);
+
+                const tdTotal = document.createElement('td');
+                tdTotal.textContent = histo.total;
+                linha.appendChild(tdTotal);
+
+                body.append(linha);
+            });
         });
-    });
 }
 renderTelaHistory()

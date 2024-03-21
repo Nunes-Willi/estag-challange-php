@@ -146,52 +146,6 @@ function delet(id) {
   renderTable();
 }
 
-// function renderTelaCar() {
-//   document.getElementById("tbody").innerText = "";
-//   fetch("http://localhost/routes/orders.php?action=getitem")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const body = document.getElementById("tbody");
-
-//       var taxFinish = 0;
-//       var totalFinish = 0;
-
-//       data.forEach((order) => {
-//         var azul = (order.tax / 100) * order.price + order[3] * order.price;
-//         const linha = document.createElement("tr");
-//         linha.innerHTML = `
-//             <tr>
-//             <td>${order[0]}</td>
-//             <td>${order[7]}</td>
-//             <td>${order[3]} UND</td>
-//             <td>${order.tax}%</td>
-//                 <td>$${order.price}</td>
-//                 <td>$${azul.toFixed(2)}</td>
-//                 <td><button class="delet" onclick=" location.href='http://localhost/routes/orders.php?action=deleteitem&code=${
-//                   order[0]
-//                 }'">Delete</button></td>
-//                 </tr>
-//                 `;
-//         body.append(linha);
-//         // //console.log(data);
-
-//         var taxF = parseFloat(order.tax);
-//         var price = parseFloat(order.price);
-
-//         taxFinish += (taxF / 100) * price;
-//         totalFinish += order[3] * order.price;
-
-//         document.querySelector("#tax2").value = `${taxFinish.toFixed(2)}`;
-//         document.querySelector("#total2").value = `${totalFinish.toFixed(2)}`;
-//       });
-//     });
-// }
-
-// async function postCar(event) {
-//   event.preventDefault();
-
-// }
-
 async function postCar(bodyContent) {
   const formData = new FormData();
   formData.append("order_code", bodyContent.order_code);

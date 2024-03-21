@@ -14,7 +14,6 @@ function getCategory() {
 }
 
 function renderTelaProd() {
-    // debugger
   document.getElementById("tbody").innerText = "";
   fetch("http://localhost/routes/products.php?action=get")
     .then((response) => response.json())
@@ -22,7 +21,6 @@ function renderTelaProd() {
       const tbody = document.getElementById("tbody");
 
       data.forEach((product) => {
-        // console.log(product);
         const linha = document.createElement("tr");
 
         const tdCode = document.createElement("td");
@@ -32,15 +30,15 @@ function renderTelaProd() {
         const tdProduct = document.createElement("td");
         tdProduct.textContent = product[1];
         linha.appendChild(tdProduct);
-        
+
         const tdAmount = document.createElement("td");
         tdAmount.textContent = product.amount;
         linha.appendChild(tdAmount);
-        
+
         const tdPrice = document.createElement("td");
         tdPrice.textContent = product.price;
         linha.appendChild(tdPrice);
-        
+
         const tdCategory = document.createElement("td");
         tdCategory.textContent = product.name;
         linha.appendChild(tdCategory);
@@ -50,13 +48,13 @@ function renderTelaProd() {
         deletBtn.className = "delet";
         deletBtn.textContent = "Delete";
         deletBtn.onclick = function () {
-            location.href=`http://localhost/routes/products.php?action=delete&code=${product[0]}`
+          location.href = `http://localhost/routes/products.php?action=delete&code=${product[0]}`
         };
         tdAction.appendChild(deletBtn);
         linha.appendChild(tdAction);
 
         tbody.append(linha);
-    });
+      });
     });
 }
 

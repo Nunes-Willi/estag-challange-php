@@ -1,50 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suite Store - Products</title>
-    <link rel="stylesheet" href="./products.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Suite Store - Products</title>
+        <link rel="stylesheet" href="./products.css">
+    </head>
 
-<body>
-    <nav class="header">
-        <a href="../home/index.html">
-            <h1>Suite Store</h1>
-        </a>
-        <a href="../Products/products.html">Products</a>
-        <a href="../categories/categories.html">Categories</a>
-        <a href="../history/history.html">History</a>
-    </nav>
-    <div class="add_prod">
-        <form onsubmit="postProd(event)" id="productForm">
-            <input type="text" class="prod" name="name" id="input-prod" placeholder="Product"><br>
-            <input type="number" class="amount" name="amount" id="input-amount" placeholder="Amount">
-            <input type="number" min="0.05" step="any" class="up" name="price" id="input-up" placeholder="Price">
-            <select name="category_code" class="cat" id="select-category">
-                <option value="Category" disabled selected hidden>Category</option>
-            </select>
-            <button type="submit" class="add">Add Product</button>
-        </form>
-    </div>
-    <div class="table">
-        <table id="tbprod">
-            <tr>
-                <th class="first_colum">Code</th>
-                <th>Product</th>
-                <th>Amount</th>
-                <th>Price</th>
-                <th>Category</th>
-                <th>Action</th>
-            </tr>
-            <tbody id="tbody"></tbody>
-        </table>
+    <body>
+        <nav class="header">
+            <a href="../home/index.html">
+                <h1>Suite Store</h1>
+            </a>
+            <a href="../Products/products.html">Products</a>
+            <a href="../categories/categories.html">Categories</a>
+            <a href="../history/history.html">History</a>
+        </nav>
+        <div class="add_prod">
+            <form onsubmit="postProd(event)" id="productForm">
+                <input type="text" class="prod" name="name" id="input-prod"
+                    placeholder="Product"><br>
+                <input type="number" class="amount" name="amount"
+                    id="input-amount" placeholder="Amount">
+                <input type="number" min="0.05" step="any" class="up"
+                    name="price" id="input-up" placeholder="Price">
+                <select name="category_code" class="cat" id="select-category">
+                    <option value="Category" disabled selected
+                        hidden>Category</option>
+                </select>
+                <button type="submit" class="add">Add Product</button>
+            </form>
+        </div>
+        <div class="table">
+            <table id="tbprod">
+                <tr>
+                    <th class="first_colum">Code</th>
+                    <th>Product</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+                <tbody id="tbody"></tbody>
+            </table>
 
-        <img src>
+            <img src>
 
-    </div>
-    <script src="./productswithphp.js"></script>
-</body>
+        </div>
+        <script src="./productswithphp.js"></script>
+    </body>
 
 </html>
