@@ -39,19 +39,23 @@ a {
     right: 0px;
     bottom: 70px;
 }
+
 .tax2 {
     border: none;
     width: 30%;
 }
+
 .total2 {
     border: none;
     width: 30%;
 }
+
 .direito2 {
     position: absolute;
     right: 100px;
     bottom: 25px;
 }
+
 footer {
     position: relative;
     bottom: 0;
@@ -60,12 +64,14 @@ footer {
     border-top: 1px solid black;
     height: 8.5vh;
 }
+
 .finish {
     background-color: #6a65fe;
     width: 150px;
     height: 25px;
 
 }
+
 .cancel {
     background-color: rgb(221, 220, 220);
     width: 150px;
@@ -82,6 +88,7 @@ footer {
     transition-duration: 0.5s;
     padding: 8px;
 }
+
 .delet {
     display: block;
     cursor: pointer;
@@ -95,12 +102,14 @@ footer {
     margin: 0 auto;
     padding: 4px;
 }
+
 .delet:hover,
 .deletHisto:hover {
     box-shadow: none;
     transition: 0.3s;
     font-weight: bold;
 }
+
 th,
 td {
     border-bottom: solid 1px;
@@ -109,6 +118,7 @@ td {
     padding: 10px;
     text-align: center;
 }
+
 table {
     width: 95%;
     margin: 10px;
@@ -117,6 +127,7 @@ table {
     max-width: 100%;
     word-break: break-all;
 }
+
 .first_colum {
     border-left: none;
     word-break: normal;
@@ -132,6 +143,7 @@ table {
     padding-right: 0;
     align-items: center;
 }
+
 .category {
     margin: 10px;
     margin-right: 0px;
@@ -140,6 +152,7 @@ table {
     border: solid 1px;
     height: 23px;
 }
+
 .tax_cat {
     margin: 10px;
     margin-right: 0;
@@ -148,6 +161,7 @@ table {
     border: solid 1px;
     height: 23px;
 }
+
 .tableC {
     display: inline-block;
     width: 50%;
@@ -157,7 +171,7 @@ table {
     border-left: solid 1px;
 }
 
-/*===== Products =====*/
+/*===== PRODUCTS =====*/
 .add_prod {
     display: inline-block;
     width: 50%;
@@ -175,6 +189,7 @@ table {
     border: solid 1px;
     height: 23px;
 }
+
 .amountP {
     margin-left: 10px;
     width: 40%;
@@ -183,6 +198,7 @@ table {
     border: solid 1px;
     height: 23px;
 }
+
 .catP {
     margin: 5px;
     width: 27.8%;
@@ -191,6 +207,7 @@ table {
     border: solid 1px;
     height: 26px;
 }
+
 .upP {
     margin: 5px;
     width: 25%;
@@ -199,6 +216,7 @@ table {
     border: solid 1px;
     height: 23px;
 }
+
 .tableP {
     display: inline-block;
     width: 50%;
@@ -206,4 +224,55 @@ table {
     margin: 0;
     padding: 0;
     border-left: solid 1px;
+}
+
+/*===== HOME/"INDEX" =====*/
+.add_prod_car {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    margin-right: 0;
+    /* margin-bottom: 643px; */
+    padding-right: 0;
+    align-items: center;
+}
+.tableI {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-left: solid 1px;
+}
+.prodI {
+    margin: 10px;
+    margin-right: 0px;
+    width: 95%;
+    background-color: rgb(221, 220, 220);
+    border: solid 1px;
+    height: 23px;
+}
+.amountI {
+    margin-left: 10px;
+    width: 40%;
+    display: inline-block;
+    background-color: rgb(221, 220, 220);
+    border: solid 1px;
+    height: 23px;
+}
+.taxI {
+    margin: 5px;
+    width: 25%;
+    display: inline-block;
+    background-color: rgb(221, 220, 220);
+    border: solid 1px;
+    height: 23px;
+}
+.upI {
+    margin: 5px;
+    width: 25%;
+    display: inline-block;
+    background-color: rgb(221, 220, 220);
+    border: solid 1px;
+    height: 23px;
 }

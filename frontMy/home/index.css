@@ -31,8 +31,7 @@ h1 {
     margin-left: 10px;
 }
 
-.add_prod,
-.add_category {
+.add_prod{
     display: inline-block;
     width: 48%;
     height: auto;
