@@ -232,7 +232,7 @@ table {
     width: 50%;
     height: auto;
     margin-right: 0;
-    /* margin-bottom: 643px; */
+    margin-bottom: 643px;
     padding-right: 0;
     align-items: center;
 }
@@ -275,4 +275,14 @@ table {
     background-color: rgb(221, 220, 220);
     border: solid 1px;
     height: 23px;
+}
+
+/*===== HISTORY =====*/
+td:hover p{
+    display: block;
+}
+p{
+    display: none;
+    font-weight: bold;
+    color: rgb(3, 223, 3);
 }

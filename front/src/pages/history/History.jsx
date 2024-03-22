@@ -1,12 +1,12 @@
 import React from 'react';
 
 import FooterG from '../../components/FooterG';
+import TableH from '../../components/TableH';
 
 function History() {
     return (
         <div>
-            <h1>This is a page for History</h1>
-
+            <TableH />
             <FooterG />
         </div>
     );
