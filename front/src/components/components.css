@@ -1,0 +1,30 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+}
+
+.header{
+    background-color: #6a65fe;
+    width: 203.2vh;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.linkHome{
+    font-size: 1.5rem;
+    margin-left: 10px;
+    margin-bottom: 2px;
+}

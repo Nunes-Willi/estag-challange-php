@@ -244,7 +244,7 @@ function menosProdStok() {
             var amount = amountProd - amountCart;
 
             if (amount < amountCart) {
-              alert(`Quantidade não disponivel ${itemBanco[1]}`);
+              alert(`Quantidade não disponivel ${itemBanco[1]}, se quiser continuar a compra clique em ok porém ${itemBanco[1]}não será enviado`);
               return;
             } else {
               let dataC = new FormData();
