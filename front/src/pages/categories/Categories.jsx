@@ -1,8 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+// import FooterG from '../../components/FooterG';
+import FormC from '../../components/FormC';
+import TableCH from '../../components/TableC';
 
 function Categories() {
-    return (  
-        <h1>This is a page for CATEGORIES</h1>
+    return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <FormC />
+            <TableCH />
+            {/* <FooterG/> */}
+        </div>
     );
 }
 

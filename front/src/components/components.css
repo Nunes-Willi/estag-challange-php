@@ -1,13 +1,17 @@
-body{
+/* ===== RESET ===== */
+body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 0;
     margin: 0;
     border-collapse: collapse;
+    width: 203.2vh;
+    height: auto;
+    /* background-color: pink; */
 }
 
-.header{
+/*===== HEADER =====*/
+.header {
     background-color: #6a65fe;
-    width: 203.2vh;
     height: 8vh;
     display: flex;
     align-items: center;
@@ -23,8 +27,183 @@ a {
     margin-right: 15px;
 }
 
-.linkHome{
+.linkHome {
     font-size: 1.5rem;
     margin-left: 10px;
     margin-bottom: 2px;
+}
+
+/*===== FOOTER =====*/
+.direito {
+    position: absolute;
+    right: 0px;
+    bottom: 70px;
+}
+.tax2 {
+    border: none;
+    width: 30%;
+}
+.total2 {
+    border: none;
+    width: 30%;
+}
+.direito2 {
+    position: absolute;
+    right: 100px;
+    bottom: 25px;
+}
+footer {
+    position: relative;
+    bottom: 0;
+    /* width: 100%; */
+    /* background-color: red; */
+    border-top: 1px solid black;
+    height: 8.5vh;
+}
+.finish {
+    background-color: #6a65fe;
+    width: 150px;
+    height: 25px;
+
+}
+.cancel {
+    background-color: rgb(221, 220, 220);
+    width: 150px;
+    height: 25px;
+}
+
+/*===== Css Reutilizavel =====*/
+.add {
+    width: 95.7%;
+    background-color: #6a65fe;
+    font-weight: bold;
+    margin: 10px;
+    border: none;
+    transition-duration: 0.5s;
+    padding: 8px;
+}
+.delet {
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #6a65fe;
+    border: none;
+    box-shadow: 0 2px black;
+    width: 130px;
+    margin: 0 auto;
+    padding: 4px;
+}
+.delet:hover,
+.deletHisto:hover {
+    box-shadow: none;
+    transition: 0.3s;
+    font-weight: bold;
+}
+th,
+td {
+    border-bottom: solid 1px;
+    border-top: none;
+    border-left: solid 1px;
+    padding: 10px;
+    text-align: center;
+}
+table {
+    width: 95%;
+    margin: 10px;
+    border-collapse: collapse;
+    align-items: center;
+    max-width: 100%;
+    word-break: break-all;
+}
+.first_colum {
+    border-left: none;
+    word-break: normal;
+}
+
+/*===== CATEGORIES =====*/
+.add_category {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 643px;
+    padding-right: 0;
+    align-items: center;
+}
+.category {
+    margin: 10px;
+    margin-right: 0px;
+    width: 95%;
+    background-color: rgb(221, 220, 220);
+    border: solid 1px;
+    height: 23px;
+}
+.tax_cat {
+    margin: 10px;
+    margin-right: 0;
+    width: 95%;
+    background-color: rgb(221, 220, 220);
+    border: solid 1px;
+    height: 23px;
+}
+.tableC {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-left: solid 1px;
+}
+
+/*===== Products =====*/
+.add_prod {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 643px;
+    padding-right: 0;
+    align-items: center;
+}
+.prodP {
+    margin: 10px;
+    margin-right: 0px;
+    width: 95%;
+    background-color: rgb(221, 220, 220);
+    border: solid 1px;
+    height: 23px;
+}
+.amountP {
+    margin-left: 10px;
+    width: 40%;
+    display: inline-block;
+    background-color: rgb(221, 220, 220);
+    border: solid 1px;
+    height: 23px;
+}
+.catP {
+    margin: 5px;
+    width: 27.8%;
+    display: inline-block;
+    background-color: rgb(221, 220, 220);
+    border: solid 1px;
+    height: 26px;
+}
+.upP {
+    margin: 5px;
+    width: 25%;
+    display: inline-block;
+    background-color: rgb(221, 220, 220);
+    border: solid 1px;
+    height: 23px;
+}
+.tableP {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-left: solid 1px;
 }

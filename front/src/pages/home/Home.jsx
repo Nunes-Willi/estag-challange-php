@@ -1,8 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
+import FooterH from '../../components/FooterH';
 function Home() {
     return (  
-        <h1>This is a page for HOME</h1>
+
+        <div>
+            <h1>This is a page for HOME</h1>
+    
+            <FooterH />
+        </div>
     );
 }
 
