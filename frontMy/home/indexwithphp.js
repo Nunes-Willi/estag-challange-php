@@ -234,9 +234,9 @@ function menosProdStok() {
     .then((response) => response.json())
     .then((data) => {
       const carts = JSON.parse(localStorage.getItem("mytbItemCar"));
-      data.forEach((itemBanco) => {
+      data.forEach((itemBanco) => {        
         carts.forEach((itemC) => {
-          if (itemC.newProdCar == itemBanco.code) {
+          if (itemC.newProdCar == itemBanco[0]) {
             var code = itemC.newProdCar;
             var amountProd = parseInt(itemBanco.amount);
             var amountCart = parseInt(itemC.newAmountCar);
@@ -244,7 +244,7 @@ function menosProdStok() {
             var amount = amountProd - amountCart;
 
             if (amount < amountCart) {
-              alert("Quantidade não disponivel");
+              alert(`Quantidade não disponivel ${itemBanco[1]}`);
               return;
             } else {
               let dataC = new FormData();
@@ -258,10 +258,6 @@ function menosProdStok() {
               return true;
             }
           }
-          // else{
-          //   alert('Erro de Concordância')
-          //   return;
-          // }
         });
       });
     });
