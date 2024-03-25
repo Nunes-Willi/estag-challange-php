@@ -1,8 +1,8 @@
 import React from 'react';
 
 // import FooterG from '../../components/FooterG';
-import FormC from '../../components/FormC';
-import TableC from '../../components/TableC';
+import FormC from './componentsC/FormC';
+import TableC from './componentsC/TableC';
 
 function Categories() {
     return (

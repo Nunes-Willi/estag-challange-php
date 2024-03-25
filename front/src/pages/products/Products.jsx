@@ -1,8 +1,8 @@
 import React from 'react';
 
 // import FooterG from '../../components/FooterG';
-import FormP from '../../components/FormP';
-import TableP from '../../components/TableP';
+import FormP from './camponentsP/FormP';
+import TableP from './camponentsP/TableP';
 function Products() {
     return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>

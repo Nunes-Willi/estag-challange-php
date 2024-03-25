@@ -1,15 +1,15 @@
 import React from 'react';
 
-import FormI from '../../components/FormI';
-import TableI from '../../components/Table';
-// import FooterH from '../../components/FooterH';
+import FormI from './componentsI/FormI';
+import TableI from './componentsI/TableI';
+import FooterH from './componentsI/FooterH'
 function Home() {
     return (  
 
         <div style={{ display: 'flex', flexDirection: 'row' }}>
             <FormI />
             <TableI />
-            {/* <FooterH /> */}
+            <FooterH />
         </div>
     );
 }
