@@ -54,14 +54,17 @@ function FormI() {
                 newTaxCar,
                 newUpCar,
             };
-            console.log("🚀 ~ AddCarrrinho ~ newElementCar:", newElementCar)
 
 
             if (localStorage.getItem("mytbItemCar") === null) {
                 localStorage.setItem(("mytbItemCar"), JSON.stringify([newElementCar]))
             } else {
-                localStorage.setItem("mytbItemCar", JSON.stringfy([...JSON.parse(localStorage.getItem("mytbItemCar")), newElementCar]));
+                let itensNoCarrinho = JSON.parse(localStorage.getItem("mytbItemCar"))
+                let novoCarrinho = [...itensNoCarrinho, newElementCar]
+                console.log(novoCarrinho)
+                localStorage.setItem("mytbItemCar", JSON.stringify(novoCarrinho));
             }
+            localStorage.mytbItemCar = JSON.stringify(newElementCar)
 
             document.getElementById("input-car-amount").value = "1";
             document.getElementById("select-product").value = "Product";
