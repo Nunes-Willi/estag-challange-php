@@ -10,7 +10,7 @@ function RenderTableP({ item }) {
             <td>${price.toFixed(2)}</td>
             <td>{item.name}</td>
             <td>
-                <input type="submit" className='delet' value="Delete" onClick={() => { location.href = `http://localhost/routes/products.php?action=delete&code=${item[0]}` }} />
+                <input type="submit" className='delet' value="Delete" onClick={() => { location.href = `http://localhost/routes/products.php?action=delete&code=${item[0]}`,  window.location.reload(false) }} />
             </td>
         </tr>
     );

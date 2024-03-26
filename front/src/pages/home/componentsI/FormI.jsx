@@ -68,6 +68,7 @@ function FormI() {
             document.getElementById("input-car-tax").value = "";
             document.getElementById("input-car-up").value = "";
         }
+        window.location.reload(false)
     }
 
     function pegaValorInput(event) {

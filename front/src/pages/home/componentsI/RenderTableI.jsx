@@ -9,6 +9,7 @@ function RenderTableI({ item }) {
     function delet(id) {
         tbItemCar = tbItemCar.filter(product => product.id !== id);
         localStorage.mytbItemCar = JSON.stringify(tbItemCar);
+        window.location.reload(false)
     }
 
     var azul = (item.newTaxCar / 100) * item.newUpCar +
