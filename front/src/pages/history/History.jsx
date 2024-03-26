@@ -1,7 +1,7 @@
 import React from 'react';
 
-import FooterG from '../../components/FooterG';
-import TableH from '../../components/TableH';
+import TableH from './componentsH/TableH';
+import FooterG from './componentsH/FooterG';
 
 function History() {
     return (

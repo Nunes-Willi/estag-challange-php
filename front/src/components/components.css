@@ -97,7 +97,7 @@ footer {
     outline: none;
     background-color: #6a65fe;
     border: none;
-    box-shadow: 0 2px black;
+    box-shadow: 0 2px #000000;
     width: 130px;
     margin: 0 auto;
     padding: 4px;
@@ -285,4 +285,12 @@ p{
     display: none;
     font-weight: bold;
     color: rgb(3, 223, 3);
+}
+.deletHisto{
+    background-color: #6a65fe;
+    box-shadow: 0 2px black;
+    width: 130px;
+    margin-left: 20px;
+    padding: 4px;
+
 }

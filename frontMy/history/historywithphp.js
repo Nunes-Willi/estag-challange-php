@@ -19,6 +19,7 @@ function detailBtn(codeButton) {
                         if (testDet.code == codeButton) {
                             data.forEach(det => {
                                 if (det.order_code == codeButton) {
+                                console.log("🚀 ~ .then ~ codeButton:", codeButton)
 
                                     order_code = det.order_code
                                     nameProd = det.name
