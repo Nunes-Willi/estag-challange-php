@@ -64,7 +64,6 @@ function FormI() {
                 console.log(novoCarrinho)
                 localStorage.setItem("mytbItemCar", JSON.stringify(novoCarrinho));
             }
-            localStorage.mytbItemCar = JSON.stringify(newElementCar)
 
             document.getElementById("input-car-amount").value = "1";
             document.getElementById("select-product").value = "Product";
@@ -90,10 +89,27 @@ function FormI() {
             });
     }
 
+    async function postCar(bodyContent) {
+        const formData = new FormData();
+        formData.append("order_code", bodyContent.order_code);
+        formData.append("product_code", bodyContent.product_code);
+        formData.append("amount", bodyContent.amount);
+        formData.append("price", bodyContent.price);
+        formData.append("tax", bodyContent.tax);
+
+        const response = await fetch(
+            "http://localhost/routes/orders.php?action=postitem",
+            {
+                method: "POST",
+                body: formData,
+            }
+        );
+    }
+
     return (
         <>
             <div className="add_prod_car">
-                <form /*onsubmit={postCar(event)}*/ id="carrinhoForm">
+                <form onSubmit={postCar} id="carrinhoForm">
                     <select className="prodI" name="product_code" id="select-product" onChange={pegaValorInput}>
                         {products.map((product) => (
                             <option key={product[0]} value={product[0]}>{product[1]}</option>

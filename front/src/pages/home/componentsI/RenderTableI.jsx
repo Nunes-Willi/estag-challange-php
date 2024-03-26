@@ -14,6 +14,22 @@ function RenderTableI({ item }) {
 
     var azul = (item.newTaxCar / 100) * item.newUpCar +
         item.newAmountCar * item.newUpCar;
+
+    function updateTaxAndTotalFinal() {
+        var taxFinal = 0;
+        var totalFinal = 0;
+
+        tbItemCar.forEach((itemC) => {
+            taxFinal += parseFloat((itemC.newTaxCar / 100) * itemC.newUpCar);
+            totalFinal += itemC.newAmountCar * itemC.newUpCar;
+
+            document.querySelector("#tax2").value = `$${taxFinal.toFixed(2)}`;
+            document.querySelector("#total2").value = `$${totalFinal.toFixed(2)}`;
+
+            localStorage.mytbItemCar = JSON.stringify(tbItemCar);
+        });
+    }
+    updateTaxAndTotalFinal()
     return (
         <tr>
             <td>{item.id}</td>
