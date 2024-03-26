@@ -10,6 +10,9 @@ function RenderTableI({ item }) {
         tbItemCar = tbItemCar.filter(product => product.id !== id);
         localStorage.mytbItemCar = JSON.stringify(tbItemCar);
     }
+
+    var azul = (item.newTaxCar / 100) * item.newUpCar +
+        item.newAmountCar * item.newUpCar;
     return (
         <tr>
             <td>{item.id}</td>
@@ -17,7 +20,7 @@ function RenderTableI({ item }) {
             <td>{item.newAmountCar}</td>
             <td>{item.newTaxCar}</td>
             <td>{item.newUpCar}</td>
-            <td>SubTotal</td>
+            <td>{azul.toFixed(2)}</td>
             <td>
                 <input type="submit" className='delet' value='Delete' onClick={() => delet(item.id)} />
             </td>

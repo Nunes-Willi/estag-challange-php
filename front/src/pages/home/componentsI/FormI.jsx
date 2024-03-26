@@ -10,8 +10,8 @@ function FormI() {
                 setProduct(data);
             })
     }, []);
-    
-    var tbItemCar = []; 
+
+    var tbItemCar = [];
 
     function AddCarrrinho() {
         if (localStorage.mytbItemCar) {
@@ -56,8 +56,8 @@ function FormI() {
             };
             console.log("🚀 ~ AddCarrrinho ~ newElementCar:", newElementCar)
 
-            
-            if(localStorage.getItem("mytbItemCar") === null)  {
+
+            if (localStorage.getItem("mytbItemCar") === null) {
                 localStorage.setItem(("mytbItemCar"), JSON.stringify([newElementCar]))
             } else {
                 localStorage.setItem("mytbItemCar", JSON.stringfy([...JSON.parse(localStorage.getItem("mytbItemCar")), newElementCar]));
